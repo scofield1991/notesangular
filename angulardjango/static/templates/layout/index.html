@@ -1,0 +1,13 @@
+<posts posts="vm.posts" ng-show="vm.posts && vm.posts.length"></posts>
+<a class="btn btn-primary btn-fab btn-raised mdi-content-add btn-add-new-post"
+  href="javascript:void(0)"
+  ng-show="vm.isAuthenticated"
+  ng-dialog="/static/templates/posts/new-post.html"
+  ng-dialog-controller="NewPostController as vm"></a>
+
+<a class="btn btn-large btn-success " id="btnlabel"
+  href="javascript:void(0)"
+  ng-show="vm.isAuthenticated"
+  ng-dialog="/static/templates/labels/new-label.html"
+  ng-dialog-controller="LabelController as vm">Add new label</a>
+<a class="btn btn-large btn-success " id="btncategory" href="/notes/add_category/">Add new category</a>

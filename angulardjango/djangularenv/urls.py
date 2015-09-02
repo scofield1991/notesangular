@@ -18,12 +18,13 @@ from django.contrib import admin
 from rest_framework import routers
 from rest_framework_nested import routers
 from authentication.views import AccountViewSet, IndexView, LoginView, LogoutView
-from posts.views import AccountPostsViewSet, PostViewSet, LabelViewSet
+from posts.views import AccountPostsViewSet, PostViewSet, LabelViewSet, CategoryViewSet
 
 router = routers.SimpleRouter()
 router.register(r'accounts', AccountViewSet)
 router.register(r'posts', PostViewSet)
 router.register(r'labels', LabelViewSet)
+router.register(r'category', CategoryViewSet)
 accounts_router = routers.NestedSimpleRouter(
     router, r'accounts', lookup='account'
 )

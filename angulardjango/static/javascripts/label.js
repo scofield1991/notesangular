@@ -14,13 +14,13 @@
         vm.submit = submit;
 
         function submit() {
-                content: vm.content
+                $scope.closeThisDialog();
 
             return $http.post('/api/v1/labels/', {
                 title: vm.content
             });
 
-            $scope.closeThisDialog();
+
 
         }
     }

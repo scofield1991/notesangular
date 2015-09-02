@@ -10,4 +10,9 @@
   ng-show="vm.isAuthenticated"
   ng-dialog="/static/templates/labels/new-label.html"
   ng-dialog-controller="LabelController as vm">Add new label</a>
-<a class="btn btn-large btn-success " id="btncategory" href="/notes/add_category/">Add new category</a>
+
+<a class="btn btn-large btn-success " id="btncategory"
+  href="javascript:void(0)"
+  ng-show="vm.isAuthenticated"
+  ng-dialog="/static/templates/labels/new-category.html"
+  ng-dialog-controller="CategoryController as vm">Add new category</a>

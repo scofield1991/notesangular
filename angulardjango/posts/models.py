@@ -21,7 +21,7 @@ class Category(MPTTModel):
 
 class Post(models.Model):
     author = models.ForeignKey(Account, null=True)
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, null=True)
     content = models.TextField()
     labels = models.ManyToManyField(Label, blank=True, null=True)
     category = models.ManyToManyField(Category)

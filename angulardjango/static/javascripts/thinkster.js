@@ -12,7 +12,8 @@
             'layout',
             'posts',
             'utils',
-            'label'
+            'label',
+            'category'
 
 
         ]);
@@ -22,6 +23,10 @@
 
     angular
         .module('label', []);
+
+    angular
+        .module('category', []);
+
 
     angular
         .module('config', []);

@@ -41,7 +41,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'compressor',
     'posts',
-    'mptt'
+    'mptt',
 )
 
 MIDDLEWARE_CLASSES = (

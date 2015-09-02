@@ -2,9 +2,9 @@ from django.shortcuts import render
 from rest_framework import permissions, viewsets
 from rest_framework.response import Response
 from django.views.decorators.csrf import csrf_exempt
-from posts.models import Post, Label
+from posts.models import Post, Label, Category
 from posts.permissions import IsAuthorOfPost
-from posts.serializers import PostSerializer, LabelSerializer
+from posts.serializers import PostSerializer, LabelSerializer, CategorySerializer
 from django.utils.decorators import method_decorator
 
 class PostViewSet(viewsets.ModelViewSet):
@@ -45,4 +45,12 @@ class LabelViewSet(viewsets.ModelViewSet):
                 return (permissions.AllowAny(),)
             return (permissions.IsAuthenticated(),)
 
+class CategoryViewSet(viewsets.ModelViewSet):
+        queryset = Category.objects.all()
+        serializer_class = CategorySerializer
 
+
+        def get_permissions(self):
+            if self.request.method in permissions.SAFE_METHODS:
+                return (permissions.AllowAny(),)
+            return (permissions.IsAuthenticated(),)

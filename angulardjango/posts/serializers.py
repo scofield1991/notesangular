@@ -1,7 +1,7 @@
 __author__ = 'user'
 from rest_framework import serializers
 from authentication.serializers import AccountSerializer
-from posts.models import Post, Label
+from posts.models import Post, Label, Category
 
 class PostSerializer(serializers.ModelSerializer):
     author = AccountSerializer(required=False, read_only=True)
@@ -21,3 +21,8 @@ class LabelSerializer(serializers.ModelSerializer):
 
     class Meta:
             model = Label
+
+class CategorySerializer(serializers.ModelSerializer):
+
+    class Meta:
+            model = Category

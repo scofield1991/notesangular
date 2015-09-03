@@ -24,14 +24,19 @@
             return $http.get('/api/v1/posts/');
         }
 
-        function create(content) {
+        function create(content, name, labels, category, color) {
             return $http.post('/api/v1/posts/', {
-                content: content
+                content: content,
+                name: name,
+                labels: [parseInt(labels)],
+                category: [parseInt(category)],
+                color: color
             });
         }
 
         function get(username) {
-            return $http.get('/api/v1/accounts' + username + '/posts/')
+            return $http.get('/api/v1/accounts/' + username + '/posts/')
         }
+
     }
 })();

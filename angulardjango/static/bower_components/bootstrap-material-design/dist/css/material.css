@@ -2403,7 +2403,7 @@ body .well,
 body .jumbotron,
 .container .jumbotron,
 .container-fluid .jumbotron {
-  background-color: #fff;
+  /*background-color: #fff;*/
   padding: 19px;
   margin-bottom: 20px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);
@@ -2418,9 +2418,9 @@ body .jumbotron p,
 .container-fluid .jumbotron p {
   font-weight: 300;
 }
-body .well,
+/*body .well,*/
 .container .well,
-.container-fluid .well,
+/*.container-fluid .well,*/
 body .jumbotron,
 .container .jumbotron,
 .container-fluid .jumbotron,

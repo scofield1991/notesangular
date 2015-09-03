@@ -8,7 +8,6 @@
 
   <div class="form-group">
     <label for="repeatSelect"> Parent category </label>
-      <p>{{ vm.cat }}</p>
     <select name="repeatSelect" ng-model="vm.c">
       <option ng-repeat="option in vm.cat" value="{{option.id}}">{{option.name}}</option>
     </select>

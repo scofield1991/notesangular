@@ -10,9 +10,9 @@
         .controller('IndexController', IndexController);
 
     IndexController.$inject =
-        ['$scope', 'Authentication', 'Posts', 'Snackbar'];
+        ['$scope', 'Authentication', 'Posts', 'Snackbar','$cookies',];
 
-    function IndexController($scope, Authentication, Posts, Snackbar) {
+    function IndexController($scope, Authentication, Posts, Snackbar, $cookies) {
         var vm = this;
 
         vm.isAuthenticated = Authentication.isAuthenticated();
@@ -20,8 +20,22 @@
 
         activate();
 
+         function getAuthenticatedAccount() {
+             if (!$cookies.AuthenticatedAccount) {
+                 return;
+             }
+             return JSON.parse($cookies.AuthenticatedAccount);
+         }
         function activate() {
-            Posts.all().then(postsSuccessFn, postsErrorFn);
+
+            var user=getAuthenticatedAccount()
+            console.log(user.username);
+
+            Posts.get(user.username).then(postsSuccessFn, postsErrorFn);
+
+            var user=getAuthenticatedAccount()
+            console.log(user.username);
+
 
             $scope.$on('post.created', function(event, post) {
                 vm.posts.unshift(post);

@@ -80,7 +80,7 @@
         }
 
         function unauthenticated() {
-            delete $cookies.authenticatedAccount;
+            delete $cookies.AuthenticatedAccount;
         }
     }
 })();

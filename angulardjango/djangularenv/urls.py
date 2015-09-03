@@ -18,7 +18,9 @@ from django.contrib import admin
 from rest_framework import routers
 from rest_framework_nested import routers
 from authentication.views import AccountViewSet, IndexView, LoginView, LogoutView
-from posts.views import AccountPostsViewSet, PostViewSet, LabelViewSet, CategoryViewSet
+from posts.views import AccountPostsViewSet, PostViewSet, LabelViewSet, CategoryViewSet, PostDetail
+
+#url(r'^notes/(?P<pk>[0-9]+)/$', views.NoteDetail.as_view()),
 
 router = routers.SimpleRouter()
 router.register(r'accounts', AccountViewSet)
@@ -39,6 +41,7 @@ urlpatterns = [
     #     'get': 'list',
     #     'post': 'create'
     #     }), name='account'),
+    url(r'^posts/(?P<pk>[0-9]+)/$', PostDetail.as_view()),
      url(r'^api/v1/auth/login/$', LoginView.as_view(), name='login'),
     url(r'^api/v1/auth/logout/$', LogoutView.as_view(), name='logout'),
     url('^.*$', IndexView.as_view(), name='index'),

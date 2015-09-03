@@ -25,6 +25,7 @@ class Post(models.Model):
     content = models.TextField()
     labels = models.ManyToManyField(Label, blank=True, null=True)
     category = models.ManyToManyField(Category)
+    color = models.CharField(default='#FFF', max_length=20)
 
 
     created_at = models.DateTimeField(auto_now_add=True)

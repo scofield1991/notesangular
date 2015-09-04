@@ -13,7 +13,8 @@
             'posts',
             'utils',
             'label',
-            'category'
+            'category',
+            'profiles'
 
 
         ]);

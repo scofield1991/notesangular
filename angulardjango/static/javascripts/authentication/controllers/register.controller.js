@@ -15,7 +15,7 @@
 
         vm.register = register;
 
-        console.log(Authentication.isAuthenticated());
+        //console.log(Authentication.isAuthenticated());
         //activate();
         //
         //function activate() {

@@ -15,7 +15,10 @@
         var Posts = {
             all: all,
             create: create,
-            get: get
+            get: get,
+            update: update,
+            destroy: destroy,
+            getinfo: getinfo
         };
 
         return Posts;
@@ -36,6 +39,19 @@
 
         function get(username) {
             return $http.get('/api/v1/accounts/' + username + '/posts/')
+        }
+
+        function getinfo(postId) {
+            return $http.get('/api/v1/posts/' + postId + '/')
+
+        }
+
+         function destroy(postId) {
+            return $http.delete('/api/v1/posts/' + postId + '/');
+        }
+
+        function update(postId, post) {
+            return $http.put('/api/v1/posts/' + postId + '/', post );
         }
 
     }

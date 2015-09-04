@@ -29,12 +29,12 @@
         function activate() {
 
             var user=getAuthenticatedAccount()
-            console.log(user.username);
+            //console.log(user.username);
 
             Posts.get(user.username).then(postsSuccessFn, postsErrorFn);
 
             var user=getAuthenticatedAccount()
-            console.log(user.username);
+            //console.log(user.username);
 
 
             $scope.$on('post.created', function(event, post) {

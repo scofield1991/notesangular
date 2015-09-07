@@ -1,0 +1,5 @@
+Django==1.8
+djangorestframework
+django-compressor==1.4
+django-mptt
+drf-nested-routers==0.9.0
